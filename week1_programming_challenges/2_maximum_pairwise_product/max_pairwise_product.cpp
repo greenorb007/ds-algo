@@ -1,13 +1,13 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+typedef long long ll
+ll MaxPairwiseProduct(const std::vector<ll>& numbers) {
+    ll max_product = 0;
+    ll n = numbers.size();
 
-int MaxPairwiseProduct(const std::vector<int>& numbers) {
-    int max_product = 0;
-    int n = numbers.size();
-
-    for (int first = 0; first < n; ++first) {
-        for (int second = first + 1; second < n; ++second) {
+    for (ll first = 0; first < n; ++first) {
+        for (ll second = first + 1; second < n; ++second) {
             max_product = std::max(max_product,
                 numbers[first] * numbers[second]);
         }
@@ -16,11 +16,11 @@ int MaxPairwiseProduct(const std::vector<int>& numbers) {
     return max_product;
 }
 
-int main() {
-    int n;
+ll main() {
+    ll n;
     std::cin >> n;
-    std::vector<int> numbers(n);
-    for (int i = 0; i < n; ++i) {
+    std::vector<ll> numbers(n);
+    for (ll i = 0; i < n; ++i) {
         std::cin >> numbers[i];
     }
 
